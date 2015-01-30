@@ -10,7 +10,8 @@ function help()
 	echo -e "\t -r | --redis \t\t start redis"
 	echo -e "\t -h | --help \t\t show help\r\n"
 	echo "if OPTIONS is not specified, default OPTION is \"-a(--all)\"."
-	echo "in default, server will start in release mode, or else it will start in debug mode if you specified \"--debug\" following OPTIONS But NOTICE that \"--debug\" dont take effect except in OPTIONS \"-a(--all)\" and \"-n(--nginx)\"\r\n"
+	echo "in default, server will start in release mode, or else it will start in debug mode if you specified \"--debug\" following OPTIONS But NOTICE that \"--debug\" dont take effect except in OPTIONS \"-a(--all)\" and \"-n(--nginx)\""
+	echo -e "\r\n"
 }
 
 help
