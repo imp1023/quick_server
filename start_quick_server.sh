@@ -4,11 +4,11 @@ function help()
 {
 	echo "Usage: [sudo] ./start_quick_server.sh [OPTIONS] [--debug]"
 	echo "Options:"
-	echo "\t -a | --all \t\t start nginx, redis and beanstalkd"
-	echo "\t -n | --nginx \t\t start nginx"
-	echo "\t -b | --beanstalkd \t\t start beanstalkd"
-	echo "\t -r | --redis \t\t start redis"
-	echo "\t -h | --help \t\t show help"
+	echo -e "\t -a | --all \t\t start nginx, redis and beanstalkd"
+	echo -e "\t -n | --nginx \t\t start nginx"
+	echo -e "\t -b | --beanstalkd \t\t start beanstalkd"
+	echo -e "\t -r | --redis \t\t start redis"
+	echo -e "\t -h | --help \t\t show help"
 	echo "if OPTIONS is not specified, default OPTION is \"-a(--all)\"."
 	echo "in default, server will start in release mode, or else it will start in debug mode if you specified \"--debug\" following OPTIONS But NOTICE that \"--debug\" dont take effect except in OPTIONS \"-a(--all)\" and \"-n(--nginx)\""
 }
