@@ -79,5 +79,5 @@ fi
 
 #start nginx
 if [ $nginx -eq 1 ] || [ $all -eq 1 ]; then
-	
+	echo -e "Start NGINX in \033[31m DEBUG \033]0m mode..."
 fi
