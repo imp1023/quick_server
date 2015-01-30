@@ -14,6 +14,9 @@ function help()
 	echo -e "\r\n"
 }
 
+args = $(getopt -o abrnh -long all, beanstalkd, redis, nginx, help -n "Start Quick Server")
+echo "$args"
+
 curDir = $(dirname $(readlink -f $0))
 nginxDir = $curDir/openresty/nginx
 toolDir = $curDir/openresty/server/actions/tools
