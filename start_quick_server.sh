@@ -15,7 +15,10 @@ function help()
 }
 
 args = $(getopt -o abrnh -long all, beanstalkd, redis, nginx, help -n "Start Quick Server")
-echo "$args"
+if [ $? != 0 ]; then 
+	echo "Start Quick Server Terminating..." >&2;
+	exit 1;
+fi
 
 curDir = $(dirname $(readlink -f $0))
 nginxDir = $curDir/openresty/nginx
