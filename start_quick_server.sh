@@ -79,5 +79,15 @@ fi
 
 #start nginx
 if [ $nginx -eq 1 ] || [ $all -eq 1 ]; then
-	echo -e "Start NGINX in \033[31m DEBUG \033[0m mode..."
+	if [ $debug -eq 1 ] ; then
+		echo -e "Start NGINX in \033[31m DEBUG \033[0m mode..."
+		sed -i "1a error_log logs/error.log debug;" $nginxDir/conf/nginx.conf
+		sed -i "$# lua_code_cache on#lua_code_cache off#g" $nginxDir/conf/nginx.conf
+	else
+		echo -e "Start NGINX in \033[31m RELEASE \033[0m mode..."
+		sed -i "1a error_log logs/error.log" $nginxDir/conf/nginx.conf
+		sed -i "$# lua_code_cache off#lua_code_cache on#g" $nginxDir/conf/nginx.conf
+	fi
+	nginx -p $(pwd) -c #nginxDir/conf/nginx.conf
+	echo "Start Nginx DONE..."
 fi
