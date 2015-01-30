@@ -91,3 +91,21 @@ if [ $nginx -eq 1 ] || [ $all -eq 1 ]; then
 	nginx -p $(pwd) -c $nginxDir/conf/nginx.conf
 	echo "Start Nginx DONE..."
 fi
+
+#start redis
+if [ $redis -eq 1 ] || [$all -eq 1 ]; then
+	$curDir/redis/bin/redis-server $curDir/conf/redis.conf
+	echo "Start Redis DONE"
+fi
+
+#start beanstalkd
+if [ $beans -eq 1 ] || [$all -eq 1 ]; then
+	$curDir/beanstalkd/bin/beanstalkd > $curDir/logs/beanstalkd.log &
+	echo "Start beanstalkd DONE"
+fi
+
+cd $curDir
+if [ $all -eq 1 ] ; then
+	echo -e "\033[31mStart Quick Server DONE!\033[0m"
+fi
+
