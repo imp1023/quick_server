@@ -9,7 +9,7 @@ function help()
 	echo -e "\t -b | --beans \t\t start beanstalkd"
 	echo -e "\t -r | --redis \t\t start redis"
 	echo -e "\t -h | --help \t\t show help"
-	echo -e "\r\n"
+	echo -e "\r\n NOTICES:"
 	echo "if OPTIONS is not specified, default OPTION is \"-a(--all)\"."
 	echo "in default, server will start in release mode, or else it will start in debug mode if you specified \"--debug\" following OPTIONS But NOTICE that \"--debug\" dont take effect except in OPTIONS \"-a(--all)\" and \"-n(--nginx)\""
 	echo -e "\r\n"
