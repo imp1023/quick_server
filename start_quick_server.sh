@@ -88,6 +88,6 @@ if [ $nginx -eq 1 ] || [ $all -eq 1 ]; then
 		sed -i "1a error_log logs/error.log" $nginxDir/conf/nginx.conf
 		sed -i "$# lua_code_cache off#lua_code_cache on#g" $nginxDir/conf/nginx.conf
 	fi
-	nginx -p $(pwd) -c #nginxDir/conf/nginx.conf
+	nginx -p $(pwd) -c $nginxDir/conf/nginx.conf
 	echo "Start Nginx DONE..."
 fi
