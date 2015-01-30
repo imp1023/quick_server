@@ -72,4 +72,12 @@ while true ; do
 	esac
 done
 
+#debug take effect only on command "-a | -n"
+if [ nginx -ne 1 ] && [ all -ne 1 ]; then
+	debug = 0
+fi
 
+#start nginx
+if [ $nginx -eq 1 ] || [ $all -eq 1 ]; then
+	
+fi
