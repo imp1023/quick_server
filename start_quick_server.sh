@@ -14,7 +14,7 @@ function help()
 	echo "But NOTICE that \"--debug\" dont take effect except in OPTIONS \"-a(--all)\" and \"-n(--nginx)\""
 }
 
-help()
+help
 
 #CURRDIR=$(dirname $(readlink -f $0))
 #NGINX_DIR=$CURRDIR/openresty/nginx/
