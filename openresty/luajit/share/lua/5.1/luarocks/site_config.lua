@@ -1,0 +1,13 @@
+module("luarocks.site_config")
+LUAROCKS_PREFIX=[[/opt/quick_server/openresty/luajit]]
+LUA_INCDIR=[[/opt/quick_server/openresty/luajit/include/luajit-2.1]]
+LUA_LIBDIR=[[/opt/quick_server/openresty/luajit/lib]]
+LUA_BINDIR=[[/opt/quick_server/openresty/luajit/bin]]
+LUAROCKS_SYSCONFDIR=[[/opt/quick_server/openresty/luajit/etc/luarocks]]
+LUAROCKS_ROCKS_TREE=[[/opt/quick_server/openresty/luajit]]
+LUAROCKS_ROCKS_SUBDIR=[[/lib/luarocks/rocks]]
+LUA_DIR_SET=true
+LUAROCKS_UNAME_S=[[Linux]]
+LUAROCKS_UNAME_M=[[x86_64]]
+LUAROCKS_DOWNLOADER=[[wget]]
+LUAROCKS_MD5CHECKER=[[md5sum]]

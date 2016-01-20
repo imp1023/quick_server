@@ -1,0 +1,205 @@
+commands = {
+   json2lua = {
+      "lua-cjson/2.1.0-1"
+   },
+   lua2json = {
+      "lua-cjson/2.1.0-1"
+   }
+}
+dependencies = {
+   ['lua-cjson'] = {
+      ['2.1.0-1'] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   luafilesystem = {
+      ['1.6.2-2'] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   luasocket = {
+      ['3.0rc1-1'] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   },
+   lyaml = {
+      ['4-1'] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   }
+}
+modules = {
+   cjson = {
+      "lua-cjson/2.1.0-1"
+   },
+   ['cjson.util'] = {
+      "lua-cjson/2.1.0-1"
+   },
+   json2lua = {
+      "lua-cjson/2.1.0-1"
+   },
+   lfs = {
+      "luafilesystem/1.6.2-2"
+   },
+   ltn12 = {
+      "luasocket/3.0rc1-1"
+   },
+   lua2json = {
+      "lua-cjson/2.1.0-1"
+   },
+   lyaml = {
+      "lyaml/4-1"
+   },
+   mime = {
+      "luasocket/3.0rc1-1"
+   },
+   ['mime.core'] = {
+      "luasocket/3.0rc1-1"
+   },
+   socket = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.core'] = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.ftp'] = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.headers'] = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.http'] = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.serial'] = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.smtp'] = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.tp'] = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.unix'] = {
+      "luasocket/3.0rc1-1"
+   },
+   ['socket.url'] = {
+      "luasocket/3.0rc1-1"
+   },
+   yaml = {
+      "lyaml/4-1"
+   },
+   ['yaml.la'] = {
+      "lyaml/4-1"
+   }
+}
+repository = {
+   ['lua-cjson'] = {
+      ['2.1.0-1'] = {
+         {
+            arch = "installed",
+            commands = {
+               json2lua = "json2lua",
+               lua2json = "lua2json"
+            },
+            dependencies = {},
+            modules = {
+               cjson = "cjson.so",
+               ['cjson.util'] = "cjson/util.lua",
+               json2lua = "json2lua.lua",
+               lua2json = "lua2json.lua"
+            }
+         }
+      }
+   },
+   luafilesystem = {
+      ['1.6.2-2'] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               lfs = "lfs.so"
+            }
+         }
+      }
+   },
+   luasocket = {
+      ['3.0rc1-1'] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               ltn12 = "ltn12.lua",
+               mime = "mime.lua",
+               ['mime.core'] = "mime/core.so",
+               socket = "socket.lua",
+               ['socket.core'] = "socket/core.so",
+               ['socket.ftp'] = "socket/ftp.lua",
+               ['socket.headers'] = "socket/headers.lua",
+               ['socket.http'] = "socket/http.lua",
+               ['socket.serial'] = "socket/serial.so",
+               ['socket.smtp'] = "socket/smtp.lua",
+               ['socket.tp'] = "socket/tp.lua",
+               ['socket.unix'] = "socket/unix.so",
+               ['socket.url'] = "socket/url.lua"
+            }
+         }
+      }
+   },
+   lyaml = {
+      ['4-1'] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               lyaml = "lyaml.lua",
+               yaml = "yaml.so",
+               ['yaml.la'] = "yaml.la"
+            }
+         }
+      }
+   }
+}

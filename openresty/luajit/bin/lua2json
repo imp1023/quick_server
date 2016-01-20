@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec '/opt/quick_server/openresty/luajit/bin/lua' -e 'package.path="/opt/quick_server/openresty/luajit/share/lua/5.1/?.lua;/opt/quick_server/openresty/luajit/share/lua/5.1/?/init.lua;/root/.luarocks/share/lua/5.1/?.lua;/root/.luarocks/share/lua/5.1/?/init.lua;"..package.path; package.cpath="/opt/quick_server/openresty/luajit/lib/lua/5.1/?.so;/root/.luarocks/lib/lua/5.1/?.so;"..package.cpath' -lluarocks.loader -e 'luarocks.loader.add_context("lua-cjson","2.1.0-1")' '/opt/quick_server/openresty/luajit//lib/luarocks/rocks/lua-cjson/2.1.0-1/bin/lua2json' "$@"

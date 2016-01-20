@@ -1,0 +1,10 @@
+rock_manifest = {
+   lib = {
+      ['yaml.la'] = "54cf814dcddda898aa3ed156cd83e131",
+      ['yaml.so'] = "88985c7fd1b085c15cc38d657ec0215d"
+   },
+   lua = {
+      ['lyaml.lua'] = "d2abb3f296458c39981662e187747149"
+   },
+   ['lyaml-4-1.rockspec'] = "02bdd6c48ea1479a806853ba35f6a0da"
+}
