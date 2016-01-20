@@ -4,7 +4,7 @@ SRCDIR=$CURRDIR/openresty/server/actions/tools/
 
 $CURRDIR/redis/bin/redis-server $CURRDIR/conf/redis.conf
 
-service mysql start
+service mysqld start
 
 cd $NGINX_DIR
 . ./sbin/start.sh
