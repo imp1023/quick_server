@@ -14,11 +14,8 @@ function help()
 	echo -e "\r\n"
 }
 
-help
-
-#CURRDIR=$(dirname $(readlink -f $0))
-#NGINX_DIR=$CURRDIR/openresty/nginx/
-#SRCDIR=$CURRDIR/openresty/server/actions/tools/
+curDir = $(dirname $(readlink -f $0))
+nginxDir = $curDir/openresty/nginx
 
 #$CURRDIR/redis/bin/redis-server $CURRDIR/conf/redis.conf
 
