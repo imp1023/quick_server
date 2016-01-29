@@ -16,16 +16,17 @@ function help()
 
 curDir = $(dirname $(readlink -f $0))
 nginxDir = $curDir/openresty/nginx
+toolDir = $curDir/openresty/server/actions/tools
 
-#$CURRDIR/redis/bin/redis-server $CURRDIR/conf/redis.conf
+$curDir/redis/bin/redis-server $curDir/conf/redis.conf
 
-#service mysqld start
+service mysqld start
 
-#cd $NGINX_DIR
-#. ./sbin/start.sh
+cd $nginxDir
+. ./sbin/start.sh
 
-#cd $SRCDIR
-#. ./cleaner.sh  > /dev/null 2> /opt/.cleaner.log &
+cd $toolDir
+. ./cleaner.sh  > /dev/null 2> /opt/.cleaner.log &
 
 #cd $CURRDIR
 
