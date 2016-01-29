@@ -14,29 +14,62 @@ function help()
 	echo -e "\r\n"
 }
 
-args = $(getopt -o abrnh -l all,beanstalkd,redis,nginx,help)
+args=$(getopt -o abrnh --long all,beanstalkd,redis,nginx,help -n 'Start Quick Server' -- "$@")
 if [ $? != 0 ]; then 
 	echo "Start Quick Server Terminating..." >&2;
 	exit 1;
 fi
 
-curDir = $(dirname $(readlink -f $0))
-nginxDir = $curDir/openresty/nginx
-toolDir = $curDir/openresty/server/actions/tools
+curDir=$(dirname $(readlink -f $0))
+nginxDir=$curDir/openresty/nginx
+toolDir=$curDir/openresty/server/actions/tools
 
-$curDir/redis/bin/redis-server $curDir/conf/redis.conf
+eval set -- "$args"
 
-service mysqld start
+declare -i debug=0
+declare -i all=0
+declare -i beans=0
+declare -i redis=0
+declare -i nginx=0
+if [ $# -eq 1 ] ; then
+	all=1
+fi
 
-cd $nginxDir
-. ./sbin/start.sh
-
-cd $toolDir
-. ./cleaner.sh  > /dev/null 2> /opt/.cleaner.log &
-
-#cd $CURRDIR
-
-
-
+while true ; do
+	case "$1" in
+		--debug)
+			debug=1
+			shift
+			;;
+		-a|--all)
+			all=1
+			shift
+			;;
+		-b|--beanstalkd)
+			beans=1
+			shift
+			;;
+		-r|--redis)
+			redis=1
+			shift
+			;;
+		-n|--nginx)
+			nginx=1
+			shift
+			;;
+		-h|--help)
+			help;
+			exit 0
+			;;
+		--)
+			shift;
+			break
+			;;
+		*)
+			echo "invalid option: $1"
+			exit 1
+			;;
+	esac
+done
 
 
