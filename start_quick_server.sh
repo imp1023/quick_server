@@ -14,7 +14,7 @@ function help()
 	echo -e "\r\n"
 }
 
-args = $(getopt -o abrnh -long all, beanstalkd, redis, nginx, help -n "Start Quick Server")
+args = $(getopt -o abrnh -l all,beanstalkd,redis,nginx,help)
 if [ $? != 0 ]; then 
 	echo "Start Quick Server Terminating..." >&2;
 	exit 1;
